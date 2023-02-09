@@ -1,0 +1,16 @@
+{
+    "store.custom#prueba":{
+        "blocks": [
+            "flex-layout.row#rowPrueba"
+        ]
+    },
+    "flex-layout.row#rowPrueba": {
+        "props": {
+            "blockClass": "rowPrueba",
+            "colSizing": "auto"
+        },
+        "children": [
+            "form-work"  
+        ]
+    }
+}
