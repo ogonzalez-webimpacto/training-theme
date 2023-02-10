@@ -7,7 +7,9 @@
     "flex-layout.row#rowPrueba": {
         "props": {
             "blockClass": "rowPrueba",
-            "colSizing": "auto"
+            "colSizing": "auto",
+            "fullWidth": true,
+            "horizontalAlign": "center"
         },
         "children": [
             "form-work"  

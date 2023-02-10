@@ -1,6 +1,7 @@
 import React,{ Component,useState } from 'react';
 import '../../css/formWorkWithUs.css'
 import '../../css/bootstrap.css';
+require('dotenv').config()
 
 
 function FormWorkWithUs(){
@@ -47,87 +48,97 @@ function FormWorkWithUs(){
 
   return(
     <>
-    <div className="formbold-main-wrapper">
-    <div className="formbold-form-wrapper">
-      <form onSubmit={handleSubmit}>
-        <div className="mb-2">
-          <input
-            type="text"
-            value={nombre}
-            name="nombre"
-            id="nombre"
-            placeholder="Nombre"
-            className="formbold-form-input"
-          />
+  <div className="container mt-3">
+    <div className="card">
+        <div className="card-header">
+            Trabaja con nosotros
         </div>
-        <div className="mb-2">
-          <input
-            type="text"
-            value={apellidos}
-            name="apellidos"
-            id="apellidos"
-            placeholder="Apellidos"
-            className="form-input"
-          />
+        <div className="card-body">
+            <form onSubmit={handleSubmit}>
+                <div className="form-row">
+                    <div className="form-group col-md-6">
+                        <label htmlFor="inputName" className='wus-label'>Nombre</label>
+                        <input
+                                type="text"
+                                name="nombre"
+                                id="nombre"
+                                placeholder="Nombre"
+                                className="form-control"
+                            />
+                    </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="inputCompany">Apellidos</label>
+                        <input
+                                type="text"
+                                name="apellidos"
+                                id="apellidos"
+                                placeholder="Apellidos"
+                                className="form-control"
+                            />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="form-group col-md-6">
+                        <label htmlFor="email">Email</label>
+                        <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="Correo electrónico"
+                                className="form-control"
+                            />
+                    </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="tel1">Telefono</label>
+                        <input
+                                type="text"
+                                name="tel1"
+                                id="tel1"
+                                placeholder="Telefono 1"
+                                className="form-control"
+                            />
+                    </div>
+                </div>
+                <div className="form-row">
+                    <div className="form-group col-md-6">
+                        <label htmlFor="tel2">Segundo Telefono</label>
+                            <input
+                                    type="text"
+                                    name="tel2"
+                                    id="tel2"
+                                    placeholder="Telefono 2"
+                                    className="form-control"
+                                />
+                    </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="cp">Codigo Postal</label>
+                    <input
+                            type="text"
+                            name="cp"
+                            id="cp"
+                            placeholder="Codigo Postal"
+                            className="form-control"
+                        />
+                    </div>
+                </div>
+                <div className="form-row">
+                <div className="form-group col-md-12 mb-3">
+                <label htmlFor="cp">Población</label>
+                    <input
+                        type="text"
+                        name="poblacion"
+                        id="poblacion"
+                        placeholder="Población"
+                        className="form-control"
+                    />
+                </div>
+                </div>
+                <button type="submit" className="btn btn-primary">Enviar</button>
+            </form>
         </div>
-
-        <div className="mb-2">
-          <input
-            type="email"
-            value={email}
-            name="email"
-            id="email"
-            placeholder="Correo electrónico"
-            className="form-input"
-          />
-        </div>
-
-        <div className="mb-2">
-          <input
-            type="text"
-            name="poblacion"
-            id="poblacion"
-            placeholder="Población"
-            className="formbold-form-input"
-          />
-        </div>
-
-        <div className="mb-2">
-          <input
-            type="text"
-            name="cp"
-            id="cp"
-            placeholder="Codigo Postal"
-            className="formbold-form-input"
-          />
-        </div>
-
-        <div className="mb-2">
-          <input
-            type="text"
-            name="tel1"
-            id="tel1"
-            placeholder="Telefono 1"
-            className="formbold-form-input"
-          />
-        </div>
-
-        <div className="mb-2">
-
-          <input
-            type="text"
-            name="tel2"
-            id="tel2"
-            placeholder="Telefono 2"
-            className="formbold-form-input"
-          />
-        </div>
-        <div>
-          <button className="btn btn-primary">Enviar</button>
-        </div>
-      </form>
     </div>
-  </div>
+
+</div>
   </>
   )
 }

@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "description": "test training",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
