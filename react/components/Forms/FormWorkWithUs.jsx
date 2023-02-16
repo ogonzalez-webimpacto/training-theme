@@ -20,16 +20,15 @@ function FormWorkWithUs(){
     e.preventDefault();
     //console.log(process.env.X-VTEX-API-AppKey)
     try {
-      let res = await fetch("https://webimpacto.vtexcommercestable.com.br/dataentities/:dataEntityName/documents?_schema=candidatesInfo", {
+      let res = await fetch("https://indolaiberia.vtexcommercestable.com.br/dataentities/:dataEntityName/documents?_schema=candidatesInfo", {
         method: "POST",
         headers:{
         "Content-Type": "application/json",
-        Accept: "application/json",
         "X-VTEX-API-AppKey": process.env.REACT_APP_AppKey,
         "X-VTEX-API-AppToken": process.env.REACT_APP_AppToken
         },
         mode: 'no-cors',
-        body: JSON.stringify({
+        body: {
           nombre: nombre,
           apellidos: apellidos,
           poblacion: poblacion,
@@ -38,7 +37,7 @@ function FormWorkWithUs(){
           tel1: tel1,
           tel2: tel2,
           email: email
-        }),
+        },
       });
       
       //let resJson = await res.json();
