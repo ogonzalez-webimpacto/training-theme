@@ -1,7 +1,7 @@
 import React,{ Component,useState } from 'react';
 import '../../css/formWorkWithUs.css'
 import '../../css/bootstrap.css';
-require('dotenv').config()
+
 
 
 function FormWorkWithUs(){
@@ -18,9 +18,17 @@ function FormWorkWithUs(){
 
   let handleSubmit = async (e) => {
     e.preventDefault();
+    //console.log(process.env.X-VTEX-API-AppKey)
     try {
       let res = await fetch("https://webimpacto.vtexcommercestable.com.br/dataentities/:dataEntityName/documents?_schema=candidatesInfo", {
         method: "POST",
+        headers:{
+        "Content-Type": "application/json",
+        Accept: "application/json",
+        "X-VTEX-API-AppKey": process.env.REACT_APP_AppKey,
+        "X-VTEX-API-AppToken": process.env.REACT_APP_AppToken
+        },
+        mode: 'no-cors',
         body: JSON.stringify({
           nombre: nombre,
           apellidos: apellidos,
@@ -32,11 +40,10 @@ function FormWorkWithUs(){
           email: email
         }),
       });
-      let resJson = await res.json();
+      
+      //let resJson = await res.json();
+      console.log(res);
       if (res.status === 201) {
-        setName("");
-        setApellidos("");
-        setEmail("");
         setMessage("Información cargada");
       } else {
         setMessage("Some error occured");
